@@ -1,87 +1,120 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub Pages 导航</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <style>
-        body {
-            background-color: #f8f9fa;
-            font-family: 'Segoe UI', sans-serif;
-        }
-        .card {
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            background: linear-gradient(135deg, #ffffff, #f8f9fa);
-            border: none;
-            border-radius: 15px;
-            overflow: hidden;
-        }
-        .card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.2);
-        }
-        .card-title {
-            color: #0d6efd;
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
-        .card-text {
-            color: #6c757d;
-            margin-bottom: 2rem;
-        }
-        .btn-primary {
-            background-color: #0d6efd;
-            border: none;
-            padding: 0.5rem 1.5rem;
-            border-radius: 25px;
-            transition: all 0.3s;
-        }
-        .btn-primary:hover {
-            background-color: #0b5ed7;
-            transform: scale(1.05);
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        h1 {
-            color: #212529;
-            font-weight: bold;
-            margin-bottom: 2rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-        }
-        @media (max-width: 768px) {
-            .card {
-                margin-bottom: 1.5rem;
-            }
-        }
-    </style>
+    <title>CanJiSam Pages</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="container py-5">
-        <h1 class="text-center mb-4">GitHub Pages 导航</h1>
-        <div id="cards-container" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-        </div>
+    <!-- 视差背景容器 -->
+    <div class="parallax-container">
+        <div class="parallax-layer" data-speed="0.1"></div>
+        <div class="parallax-layer" data-speed="0.2"></div>
+        <div class="parallax-layer" data-speed="0.3"></div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="module">
-        import config from './config.js';
-        const container = document.getElementById('cards-container');
-        config.cards.forEach(card => {
-            container.innerHTML += `
-                <div class="col">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">${card.title}</h5>
-                            <p class="card-text">${card.description}</p>
-                            <a href="${card.link}" class="btn btn-primary">访问</a>
+
+    <div class="container mx-auto px-4 py-12">
+        <h1 class="text-center mb-12 glitch-title">CanJiSam Pages</h1>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            <div class="lg:col-span-4">
+                <div class="card mb-6 flip-card h-1/2">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="card-body flex flex-col">
+                                <h2 class="card-title">个人信息</h2>
+                                <p class="card-text">简介：全栈开发者，专注于后端全栈开发，对AI和云原生技术充满热情。</p>
+                                <!-- 后端技术栈 -->
+                                <div class="w-full">
+                                    <h5 class="card-title">后端技术</h5>
+                                    <p class="card-text">• 后端 (Node.js, Java, Python, Go)</p>
+                                    <p class="card-text">• 多语言编程 (C++/C, Java, Python)</p>
+                                    <p class="card-text">• 后端框架 (Spring Boot, Spring)</p>
+                                    <p class="card-text">• 数据库 (MySQL, MongoDB, Redis)</p>
+                                    <p class="card-text">• 中间件 (MQ, Redis)</p>
+                                    <p class="card-text">• 网络协议 (TCP/IP, HTTP)</p>
+                                    <p class="card-text">• 数据结构与算法</p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="card-body flex flex-col">
+                                <!-- 前端及运维技术栈 -->
+                                <div class="w-full">
+                                    <h5 class="card-title">前端及云技术</h5>
+                                    <p class="card-text">• 前端 (React, Vue.js, TypeScript, Next.js)</p>
+                                    <p class="card-text">• DevOps (Docker, Kubernetes, CI/CD)</p>
+                                    <p class="card-text">• 云服务 (AWS, Azure)</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>`;
-        });
-    </script>
+                </div>
+            </div>
+            <div class="lg:col-span-8">
+                <div class="mb-6">
+                    <div class="w-full">
+                        <div class="card repo-container">
+                            <div class="card-body">
+                                <h2 class="card-title mb-4 text-4xl">联系方式</h2>
+                                <div class="contact-info">
+                                    <p class="card-text mb-4 text-xl">
+                                        <i class="fas fa-envelope mr-2"></i>
+                                        <a href="mailto:jisamChan@outlook.com">jisamChan@outlook.com</a>
+                                    </p>
+                                    <p class="card-text text-xl">
+                                        <i class="fab fa-github mr-2"></i>
+                                        <a href="https://github.com/canjisam" target="_blank">GitHub: canjisam</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-6">
+                    <div class="w-full">
+                        <div class="card repo-container">
+                            <div class="card-body">
+                                <h5 class="card-title">GitHub 仓库</h5>
+                                <div id="repos-list" class="repo-grid"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="cards-container" class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                    <!-- 卡片将通过JavaScript动态生成 -->
+                </div>
+                <div class="mb-6">
+                    <div class="w-full">
+                        <div class="card repo-container">
+                            <div class="card-body">
+                                <h5 class="card-title">GitHub 仓库</h5>
+                                <div id="repos-list" class="repo-grid"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="cards-container" class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                    <!-- 卡片将通过JavaScript动态生成 -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 波浪效果容器 -->
+    <div class="waves-container">
+        <div class="wave wave1"></div>
+        <div class="wave wave2"></div>
+    </div>
+
+    <script type="module" src="script.js"></script>
 </body>
+
 </html>
